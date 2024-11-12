@@ -24,15 +24,12 @@ export default async function Header() {
           <Menubar className="h-12">
             <MenubarMenu>
               <MenubarTrigger className={"border-none"}>
-                {/* <Avatar>
-                  <AvatarImage src={session?.user?.image} />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar> */}
                 <Image
                   src={session?.user?.image}
                   height={40}
                   width={40}
-                  className="rounded-full	"
+                  className="rounded-full"
+                  alt="google-img"
                 />
               </MenubarTrigger>
               <MenubarContent>

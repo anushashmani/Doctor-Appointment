@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export default function () {
+export default function HeroSection() {
   return (
     <section className="text-gray-600 my-10 body-font">
       <div className="container mx-auto flex  md:flex-row flex-col items-center">
