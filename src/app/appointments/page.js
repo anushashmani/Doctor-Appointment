@@ -1,5 +1,5 @@
-import { columns } from "@/components/AppointmentsTable/column";
-import { AppointmentTable } from "@/components/AppointmentsTable/data-table";
+import { columns } from "@/components/AppointmentsTable/column.js";
+import { AppointmentTable } from "@/components/AppointmentsTable/data-table.js";
 import { appointments } from "@/lib/data";
 
 export default function Appointments() {
