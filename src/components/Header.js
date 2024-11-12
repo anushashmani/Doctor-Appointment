@@ -10,21 +10,30 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { auth } from "../../auth";
+import Image from "next/image";
 
-export default function Header() {
-  const session = { name: "anus" };
+export default async function Header() {
+  const session = await auth();
+  console.log("session", session);
   return (
     <div className="bg-secondary py-3">
-      <div className="flex container mx-auto justify-between p-2">
+      <div className="flex container mx-auto justify-between p-2 items-center">
         <h1 className="text-xl font-mono">LOGO</h1>
         {session ? (
-          <Menubar>
+          <Menubar className="h-12">
             <MenubarMenu>
               <MenubarTrigger className={"border-none"}>
-                <Avatar>
-                  <AvatarImage src="https://github.com/shadcn.png" />
+                {/* <Avatar>
+                  <AvatarImage src={session?.user?.image} />
                   <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
+                </Avatar> */}
+                <Image
+                  src={session?.user?.image}
+                  height={40}
+                  width={40}
+                  className="rounded-full	"
+                />
               </MenubarTrigger>
               <MenubarContent>
                 <Link href={"/profile"}>
