@@ -1,4 +1,4 @@
-import { columns } from "@/components/AppointmentsTable/Column";
+import { columns } from "@/components/AppointmentsTable/column";
 import { AppointmentTable } from "@/components/AppointmentsTable/data-table";
 import { appointments } from "@/lib/data";
 
