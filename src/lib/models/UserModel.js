@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { number } from "zod";
 
 const { Schema } = mongoose;
 
@@ -9,7 +10,7 @@ const userSchema = new Schema({
   picture: String,
   role: { type: String, default: "user", enum: ["user", "doctor", "admin"] },
   extraInfo: {
-    fees: String,
+    fees: Number,
     hospital: String,
     time: String,
     bio: String,

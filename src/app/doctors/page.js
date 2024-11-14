@@ -1,7 +1,8 @@
 import DoctorsSection from "@/components/DoctorSection";
 import Header from "@/components/Header";
 
-export default function Doctors() {
+export default function Doctors({ searchParams }) {
+  console.log("searchParams=>", searchParams);
   return (
     <div>
       <DoctorsSection />

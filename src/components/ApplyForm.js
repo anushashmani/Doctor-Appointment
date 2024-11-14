@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { addRequest } from "@/actions/requests";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   bio: z.string().min(2).max(120),
@@ -29,9 +31,12 @@ const formSchema = z.object({
   address: z.string().min(5),
 });
 
-export default function DoctorForm() {
+export default function DoctorForm({ session }) {
+  const { toast } = useToast();
+
   const form = useForm({
     resolver: zodResolver(formSchema),
+
     defaultValues: {
       bio: "",
       hospital: "",
@@ -46,9 +51,23 @@ export default function DoctorForm() {
     },
   });
 
-  const onSubmit = (values) => {
-    console.log(values);
-  };
+  async function onSubmit(values) {
+    values.user = session.user._id;
+    const response = await addRequest(values);
+    if (response.error) {
+      form.reset();
+      toast({
+        title: "Sorry , Your application cannot be submitted.",
+        description: response.msg,
+      });
+    } else {
+      form.reset();
+      toast({
+        title: "Your application is submitted.",
+        description: "You will be informed by email in 3 business days.",
+      });
+    }
+  }
 
   return (
     <Form {...form}>

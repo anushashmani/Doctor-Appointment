@@ -10,8 +10,9 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { auth } from "../../auth";
+import { auth, signOut } from "../../auth";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export default async function Header() {
   const session = await auth();
@@ -42,7 +43,14 @@ export default async function Header() {
                 </Link>
 
                 <MenubarSeparator />
-                <MenubarItem>Logout</MenubarItem>
+                <form
+                  action={async () => {
+                    "use server";
+                    await signOut("google");
+                  }}
+                >
+                  <Button variant={"outline"}>Logout</Button>
+                </form>
               </MenubarContent>
             </MenubarMenu>
           </Menubar>
