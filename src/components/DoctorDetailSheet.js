@@ -23,17 +23,17 @@ export default function DoctorDetailSheet({ doctor }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <button className="p-2 hover:bg-gray-100 rounded-full">
-          <EyeIcon className="h-5 w-5" />
+        <button className="p-2 rounded-full hover:bg-gray-100">
+          <EyeIcon className="w-5 h-5" />
           <span className="sr-only">View doctor details</span>
         </button>
       </SheetTrigger>
-      <SheetContent className="overflow-y-auto max-h-screen">
+      <SheetContent className="max-h-screen overflow-y-auto">
         <SheetHeader>
           <SheetTitle>Doctor Details</SheetTitle>
           <SheetDescription>
             <div className="flex flex-col items-center gap-4 mt-4">
-              <Avatar className="h-24 w-24">
+              <Avatar className="w-24 h-24">
                 <AvatarImage
                   src={doctor.user.picture}
                   alt={`${doctor.user.firstName} ${doctor.user.lastName}`}
@@ -43,7 +43,7 @@ export default function DoctorDetailSheet({ doctor }) {
                   {doctor.user?.lastName?.charAt(0)}
                 </AvatarFallback>
               </Avatar>
-              <h1 className="font-bold text-2xl text-center">
+              <h1 className="text-2xl font-bold text-center">
                 {`${doctor.user.firstName} ${doctor.user.lastName}`}
               </h1>
             </div>
@@ -51,45 +51,45 @@ export default function DoctorDetailSheet({ doctor }) {
         </SheetHeader>
         <div className="mt-6 space-y-4">
           <div className="flex items-center gap-2">
-            <Stethoscope className="h-5 w-5 text-gray-500" />
+            <Stethoscope className="w-5 h-5 text-gray-500" />
             <p>
               <span className="font-semibold">Specialization:</span>{" "}
               {doctor.specialization}
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <GraduationCap className="h-5 w-5 text-gray-500" />
+            <GraduationCap className="w-5 h-5 text-gray-500" />
             <p>
               <span className="font-semibold">Degree:</span> {doctor.degree}
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <Briefcase className="h-5 w-5 text-gray-500" />
+            <Briefcase className="w-5 h-5 text-gray-500" />
             <p>
               <span className="font-semibold">Experience:</span>{" "}
               {doctor.experience}
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <MapPin className="h-5 w-5 text-gray-500" />
+            <MapPin className="w-5 h-5 text-gray-500" />
             <p>
               <span className="font-semibold">Hospital:</span> {doctor.hospital}
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <MapPin className="h-5 w-5 text-gray-500" />
+            <MapPin className="w-5 h-5 text-gray-500" />
             <p>
               <span className="font-semibold">Address:</span> {doctor.address}
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <Phone className="h-5 w-5 text-gray-500" />
+            <Phone className="w-5 h-5 text-gray-500" />
             <p>
               <span className="font-semibold">Contact:</span> {doctor.number}
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <Clock className="h-5 w-5 text-gray-500" />
+            <Clock className="w-5 h-5 text-gray-500" />
             <p>
               <span className="font-semibold">Appointment Time:</span>{" "}
               {doctor.appointmentTime}

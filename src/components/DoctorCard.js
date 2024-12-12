@@ -30,7 +30,7 @@ const DoctorCard = ({ request, isAdmin, onAccept, onReject }) => (
           request.user.lastName || ""
         }`}</CardTitle>
         <CardDescription className="capitalize">
-          {request.status}
+          {request.specialization}
         </CardDescription>
       </div>
     </CardHeader>

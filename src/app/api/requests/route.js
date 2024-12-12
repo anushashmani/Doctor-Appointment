@@ -67,7 +67,12 @@ export async function PUT(req) {
     let { id, status } = obj;
     const request = await RequestModel.findOne({ _id: id });
 
-    await UserModel.findOneAndUpdate({ _id: request.user }, { role: "doctor" });
+    if (status === "accepted") {
+      await UserModel.findOneAndUpdate(
+        { _id: request.user },
+        { role: "doctor" }
+      );
+    }
     const updated = await RequestModel.findOneAndUpdate(
       {
         _id: id,

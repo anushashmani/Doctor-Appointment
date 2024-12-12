@@ -7,10 +7,10 @@ export default async function HeroSection() {
   const session = await auth();
 
   return (
-    <section className="text-gray-600 my-10 body-font">
-      <div className="container mx-auto flex  md:flex-row flex-col items-center">
-        <div className="lg:flex-grow md:w-3/4  md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-          <h1 className="font-semibold sm:text-2xl text-xl mb-4 text-gray-900">
+    <section className="my-10 text-gray-600 body-font">
+      <div className="container flex flex-col items-center mx-auto md:flex-row">
+        <div className="flex flex-col items-center mb-16 text-center lg:flex-grow md:w-3/4 md:pr-16 md:items-start md:text-left md:mb-0">
+          <h1 className="mb-4 text-xl font-semibold text-gray-900 sm:text-2xl">
             DOCTOR APPOINTMENT SYSTEM
             <br className="hidden lg:inline-block" />
             BY BATCH-11
@@ -21,14 +21,14 @@ export default async function HeroSection() {
             mlkshk tote bag selvage hot chicken authentic tumeric truffaut
             hexagon try-hard chambray.
           </p>
-          <div className="flex gap-4 justify-center">
+          <div className="flex justify-center gap-4">
             <Button variant="outline">Find Doctor You Need</Button>
             <Link href={session ? "/doctors/apply" : "/signin"}>
               <Button>Apply as Doctor</Button>
             </Link>
           </div>
         </div>
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 flex justify-end">
+        <div className="flex justify-end w-5/6 lg:max-w-lg lg:w-full md:w-1/2">
           <Image
             className="object-cover object-center rounded"
             alt="hero"

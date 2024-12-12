@@ -20,7 +20,7 @@ export default function DoctorRequests({ requests, status }) {
     type: null,
     requestId: null,
   });
-  const [activeFilter, setActiveFilter] = useState(status);
+  const [activeFilter, setActiveFilter] = useState(status, "all");
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
